@@ -97,13 +97,13 @@
 
     localVideo.pause();
     window.URL.revokeObjectURL(localVideo.src);
-    localVideo.src = '';
+    localVideo.srcObject = '';
 
-    document.getElementById('flip_video').src = '';
-    document.getElementById('round_video').src = '';
-    document.getElementById('filter_video').src = '';
-    document.getElementById('rotate_video').src = '';
-    document.getElementById('shake_video').src = '';
+    document.getElementById('flip_video').srcObject = '';
+    document.getElementById('round_video').srcObject = '';
+    document.getElementById('filter_video').srcObject = '';
+    document.getElementById('rotate_video').srcObject = '';
+    document.getElementById('shake_video').srcObject = '';
   }
 
   function getDeviceStream(option) {
