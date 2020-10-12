@@ -74,12 +74,11 @@
       localStream = stream;
       localVideo.source = stream;
 
-      document.getElementById('flip_video').source = stream;
-      //document.getElementById('flip_video').src = localVideo.src;
-      document.getElementById('round_video').src = localVideo.src;
-      document.getElementById('filter_video').src = localVideo.src;
-      document.getElementById('rotate_video').src = localVideo.src;
-      document.getElementById('shake_video').src = localVideo.src;
+      document.getElementById('flip_video').source = localStream;
+      document.getElementById('round_video').source = localStream;
+      document.getElementById('filter_video').source = localStream;
+      document.getElementById('rotate_video').source = localStream;
+      document.getElementById('shake_video').source = localStream;
 
       localVideo.onloadedmetadata = function (e) {
         localVideo.play();
