@@ -72,7 +72,7 @@
     navigator.mediaDevices.getUserMedia({video: true, audio: false})
     .then(function (stream) { // success
       localStream = stream;
-      localVideo.source = stream;
+      localVideo.srcObject = stream
 
       document.getElementById('flip_video').srcObject = stream;
       //document.getElementById('flip_video').src = localVideo.src;
