@@ -72,13 +72,14 @@
     navigator.mediaDevices.getUserMedia({video: true, audio: false})
     .then(function (stream) { // success
       localStream = stream;
-      localVideo.source = stream;
+      localVideo.srcObject = stream;
 
       document.getElementById('flip_video').source = stream;
-      document.getElementById('round_video').source = stream;
-      document.getElementById('filter_video').source = stream;
-      document.getElementById('rotate_video').source = stream;
-      document.getElementById('shake_video').source = stream;
+      //document.getElementById('flip_video').src = localVideo.src;
+      document.getElementById('round_video').src = localVideo.src;
+      document.getElementById('filter_video').src = localVideo.src;
+      document.getElementById('rotate_video').src = localVideo.src;
+      document.getElementById('shake_video').src = localVideo.src;
 
       localVideo.onloadedmetadata = function (e) {
         localVideo.play();
