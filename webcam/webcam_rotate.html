@@ -69,7 +69,7 @@
 
   // start local video
   function startVideo() {
-    getDeviceStream({video: true, audio: false})
+    navigator.mediaDevices.getUserMedia({video: true, audio: false})
     .then(function (stream) { // success
       localStream = stream;
       localVideo.src = window.URL.createObjectURL(localStream);
@@ -91,10 +91,8 @@
     localStream = null;
 
     localVideo.pause();
-    localVideo.srcObject = stream
-    localVideo.onloadedmetadata = function (e) {
-      localVideo.play();
-    };
+    window.URL.revokeObjectURL(localVideo.src);
+    localVideo.src = '';
 
     document.getElementById('flip_video').src = '';
     document.getElementById('round_video').src = '';
