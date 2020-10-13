@@ -133,8 +133,8 @@
   function sendSdp(sessionDescription) {
     console.log('---sending sdp ---');
     textForSendSdp.value = sessionDescription.sdp;
-    textForSendSdp.focus();
-    textForSendSdp.select();
+    textForSendSdp.focus(); //フォーカスする
+    textForSendSdp.select(); //全選択する
   }
 
   // ---------------------- connection handling -----------------------
@@ -170,7 +170,7 @@
 
         // Trickle ICE の場合は、何もしない
         // Vanilla ICE の場合には、ICE candidateを含んだSDPを相手に送る
-        sendSdp(peer.localDescription);
+        sendSdp(peer.localDescription); //テキストエリアに表示
       }
     };
 
