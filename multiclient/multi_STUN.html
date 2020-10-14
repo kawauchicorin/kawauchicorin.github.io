@@ -320,7 +320,7 @@
   // ---------------------- media handling -----------------------
   // start local video
   function startVideo() {
-    getDeviceStream({video: true, audio: true}) // audio: false <-- ontrack once, audio:true --> ontrack twice!!
+    getDeviceStream({video: true, audio: false}) // audio: false <-- ontrack once, audio:true --> ontrack twice!!
     .then(function (stream) { // success
       localStream = stream;
       playVideo(localVideo, stream);
