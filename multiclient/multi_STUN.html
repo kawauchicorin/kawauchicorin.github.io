@@ -106,7 +106,8 @@
   --*/
 
   // ----- use socket.io ---
-  let port = 3002;
+  //let port = 3002;
+  let port = 19302;
   let socket = io.connect('http://localhost:' + port + '/');
   let room = getRoomName();
   socket.on('connect', function(evt) {
