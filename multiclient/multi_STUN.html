@@ -107,8 +107,9 @@
 
   // ----- use socket.io ---
   //let port = 3002;
-  let port = 19302;
-  let socket = io.connect('http://localhost:' + port + '/');
+  let port = 19302; //with STUN
+  //let socket = io.connect('http://localhost:' + port + '/');
+  let socket = io.connect('stun.l.google.com:' + port + '/'); //with STUN
   let room = getRoomName();
   socket.on('connect', function(evt) {
     console.log('socket.io connected. enter room=' + room );
